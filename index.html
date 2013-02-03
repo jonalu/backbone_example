@@ -1,17 +1,27 @@
 <!doctyoe html>
+
 <head>
-  <title>Voss 2013</title>
-  <script src="./js/libs/require.js" data-main='./main.js'></script>
+    <title>Voss 2013</title>
+    <script src="./js/libs/require.js" data-main='./main.js'></script>
 </head>
 
 
 <body>
 
-  <script>
-    require(['js/modules/example_module'], function(ExampleModule){
-      console.log(ExampleModule);
-    });
-  </script>
+    <div id='contentGoesHere'></div>
+
+
+    <!-- Inside the require block we create a model instance and a view instance. Dependencies are declared in the module definition -->
+    <script>
+      require(['js/modules/example_module'], function(ExampleModule){
+          
+          var view = new ExampleModule.View({ 
+              el : '#contentGoesHere',
+              model : new ExampleModule.Model()
+          });
+         
+      });
+    </script>
 
 
 </body>
