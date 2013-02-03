@@ -1,3 +1,8 @@
+/*
+* auth jlu
+* A module definition contains a Handlebars template and Backbone View/Model/Collection[s]
+*/
+
 define([
   'jquery',
   'underscore', 
@@ -17,8 +22,7 @@ define([
       ].join('\n'),
     
       Model : Backbone.Model.extend({        
-          url: 'js/api/data.json',
-                  
+          url: 'js/api/data.json'                 
       }),
     
       View : Backbone.View.extend({
@@ -30,7 +34,6 @@ define([
               });             
           },
           render : function(){
-		          console.log(this.model.toJSON() );
               this.$el.html(this.template( this.model.toJSON() ));
           }
       })
