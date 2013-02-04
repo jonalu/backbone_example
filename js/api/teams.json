@@ -1,0 +1,36 @@
+{
+  "teams": [
+    { 
+      "name": "The Wombats",
+      "teamColor": "red",
+      "players" : [
+        { "name" : "Nelson" },
+        { "name" : "Jackson"} 
+      ]
+    },
+    { 
+      "name": "The Pussycats",
+      "teamColor": "pink",
+      "players" : [
+        { "name" : "Adams" },
+        { "name" : "Christianson"} 
+      ]
+    },
+    { 
+      "name": "The Machines",
+      "teamColor": "blue",
+      "players" : [
+        { "name" : "Lundeland" },
+        { "name" : "Wallervand"} 
+      ]
+    },
+    { 
+      "name": "The Crazy Cats",
+      "teamColor": "yellow",
+      "players" : [
+        { "name" : "Bob" },
+        { "name" : "Alice"} 
+      ]
+    }
+  ]
+}
