@@ -3,33 +3,61 @@
     { 
       "name": "The Wombats",
       "teamColor": "red",
+      "teamTextColor": "white",
       "players" : [
-        { "name" : "Nelson" },
-        { "name" : "Jackson"} 
+        { "name" : "Nelson",
+          "position": "Sweeper",
+          "age": "35"
+        },
+        { "name" : "Jackson",
+          "position": "Spydspiss",
+          "age": "35"
+        } 
       ]
     },
     { 
       "name": "The Pussycats",
       "teamColor": "pink",
+      "teamTextColor": "green",
       "players" : [
-        { "name" : "Adams" },
-        { "name" : "Christianson"} 
+        { "name" : "Adams",
+          "position": "Benkesliter",
+          "age": "55"
+        },
+        { "name" : "Christianson",
+          "position": "Høyre-ving",
+          "age": "25"
+        }
       ]
     },
     { 
       "name": "The Machines",
       "teamColor": "blue",
+      "teamTextColor": "yellow",
       "players" : [
-        { "name" : "Lundeland" },
-        { "name" : "Wallervand"} 
+        { "name" : "Lundeland",
+          "position": "Indreløper",
+          "age": "26"
+        },
+        { "name" : "Wallervand",
+          "position": "Hengende spiss",
+          "age": "26"
+        } 
       ]
     },
     { 
       "name": "The Crazy Cats",
-      "teamColor": "yellow",
+      "teamColor": "black",
+      "teamTextColor": "orange",
       "players" : [
-        { "name" : "Bob" },
-        { "name" : "Alice"} 
+        { "name" : "Bob",
+          "position": "Målvakt",
+          "age": "35"
+        },
+        { "name" : "Alice",
+          "position": "Spiss",
+          "age": "35"
+        }
       ]
     }
   ]

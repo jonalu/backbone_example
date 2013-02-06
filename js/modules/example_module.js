@@ -8,15 +8,13 @@ define([
   'underscore', 
   'backbone', 
   'handlebars',
+  'templates',
   ], 
   
-  function( $ , _ , Backbone , Handlebars ){
+  function( $ , _ , Backbone , Handlebars, Templates ){
     
     var module = {};
       
-      /* Handlebars template to be used when rendering a team model */
-      module.TeamListTemplate = '<div class="teamColor" style="background: {{ teamColor }}"></div> {{name}}';
-
       module.Player = Backbone.Model.extend({ });
 
       module.Players = Backbone.Collection.extend({
@@ -59,6 +57,7 @@ define([
       });
 
       module.LeagueView = Backbone.View.extend({
+          el : '#teamListView',          
           tagName : 'ul',
           model : module.League,
           initialize : function(){
@@ -80,25 +79,58 @@ define([
           tagName : 'li',
           model : module.Team,
           initialize : function(){
-              this.template = Handlebars.compile( module.TeamListTemplate );      
+              this.template = Handlebars.compile( Templates.TeamListTemplate );      
           },
           /* View can register to events in DOM, within the scope of the view */
           events : {
               'click' : function(){
-                  $('#shirtTeamText').text(this.model.get('name'));
-                  $('path').css('fill', this.model.get('teamColor'));
-                  $('#playerContainer').empty();
-                  _.each(this.model.collection.models, function(player){
-                      $('#playerContainer').append('<p>' + player.get('name') + '</p>' );
-                  });                 
+                  var teamView = new module.TeamView({ model : this.model });                 
               }
           },
           render : function(){
-              this.$el.html(this.template( this.model.toJSON() ));
+              this.$el.html( this.template(this.model.toJSON()) );
               return this;
           }
       });
 
+    module.TeamView = Backbone.View.extend({
+        el: '#teamView',
+        model : module.Team,
+        initialize : function(){
+            this.template = Handlebars.compile( Templates.Tshirt );
+            this.render();
+        },
+        render : function(){
+            var self = this;
+            this.$el.html( this.template(this.model.toJSON()) );
+            _.each( this.model.collection.models, function(player){
+                self.$el.append( new module.PlayerView({ model : player }).render().el );  
+            });
+        }
+    });
+
+    module.PlayerView = Backbone.View.extend({
+        className: 'player',
+        model : module.Player,
+        initialize : function(){
+            this.template = Handlebars.compile( Templates.Player );
+            console.log(this.model);
+        },
+        render : function(){
+            this.$el.html( this.template( this.model.toJSON() ));
+            return this;
+        }
+    });
+
     return module;
 
 });
+
+
+
+
+
+
+
+
+

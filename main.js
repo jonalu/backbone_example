@@ -5,7 +5,8 @@ requirejs.config({
       'jquery'     : 'libs/jquery',
       'backbone'   : 'libs/backbone',
       'underscore' : 'libs/underscore',
-      'handlebars' : 'libs/handlebars'
+      'handlebars' : 'libs/handlebars',
+      'templates'  : 'templates',
     },
     shim : {
         'handlebars' : {

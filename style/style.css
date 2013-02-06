@@ -1,0 +1,62 @@
+@font-face
+{
+font-family: bc;
+src: url('font/BC.ttf')
+}
+.teamColor{ 
+   width: 20px;
+   height: 20px;
+   float: left;
+   margin-right: 20px;
+   border-radius: 15px;
+}
+li{
+   list-style: none;
+   padding: 10px;
+   cursor : pointer;
+}
+#teamListView{
+    font-family: arial;
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    width: 200px;           
+}
+#teamView{
+    width: 800px;
+    position: absolute;
+    top: 150px;
+    left: 300px;
+}
+#teamView svg{
+    float: left;
+}
+#teamView .player {
+    font-family: arial;
+    float: right;
+    margin-left: 50px;
+    border: 2px solid black;
+    background: #fffeee;
+    width: 195px;
+    padding : 10px;
+    height: 100px;
+    line-height: 30px;
+}
+
+#teamView .player&first-child{
+    margin-left: 0;
+}
+
+#teamView text{
+  font-family: bc;
+}
+body h1{
+  font-family: bc;
+  text-align: center;
+  font-size: 50px;
+}
+body{
+  background-image : url('img/voss.jpg');
+  background-repeat: no-repeat;
+  background-position: 105% -10%; 
+}
